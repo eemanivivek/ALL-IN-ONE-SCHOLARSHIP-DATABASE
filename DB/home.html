@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home page</title>
+    <style>
+        .navbar{
+            background-color: black;
+            border-radius: 30px;
+            
+        }
+        .navbar ul{
+            overflow: auto;
+        }
+        .navbar li{
+            float:left;
+            list-style: none; 
+            margin: 13px 20px;
+            
+        }
+        .navbar li a{
+            padding: 3px 3px;
+            text-decoration: none;
+            color: white;
+        }
+        .navbar li a:hover{
+            color: red
+        }
+        .search{
+            float: right;
+            color: white;
+            padding: 12px 75px;
+        }
+        .navbar input{
+            border: 2px solid black;
+            border-radius: 14px;
+            padding: 3px 17px;
+            width: 129px;
+        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    form {
+      position: absolute;
+        top: 20%;
+        left: 30%;
+        width: 40%;
+    }
+    .container {
+      padding: 16px;
+      background-color: white;
+      margin: 10px;  
+      border-style: solid;
+      border-color: coral;     
+    }
+
+    input[type=text] {
+      width: 90%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+    input[type=text]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+    .button{
+        text-align: center;
+        border-radius: 20px;
+    }
+    .registerbtn {
+      background-color: blue;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 60%;
+      opacity: 0.9;
+      border-radius: 20px;
+    }
+    .registerbtn:hover {
+      opacity: 1;
+    }
+    </style>
+    <script type="text/javascript">
+    window.onload = function () {
+        var ddlYears = document.getElementById("ddlYears");
+ 
+        var currentYear = (new Date().getFullYear() + 2);
+ 
+        for (var i = 2020; i <= currentYear; i++) {
+            var option = document.createElement("OPTION");
+            option.innerHTML = i;
+            option.value = i;
+            ddlYears.appendChild(option);
+        }
+    };
+</script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Recommendations</a></li>
+                <li><a href="#">Matching</a></li>
+                <li><a href="login.html">Log In</a></li>
+                <div class="search">
+                    <input type="text" name="search" id="search" placeholder="Search this website">
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+
+    <form>
+    <div class="container">
+    <p style="font-size: 30px;"><b>Fill the details:</b></p>
+    <hr>
+
+    <label><b>CAST: </b> </label>
+    <select  class="plan" >
+        <option value="select" selected >Select your CASTE</option>
+        <option value="SC">SC</option>
+        <option value="ST">ST</option>
+        <option value="OBC">OBC</option>
+    </select>
+    <br> 
+    <br> 
+
+    <label><b>Present Studying: </b> </label>
+    <select  name =" present major" class="plan" >
+        <option value="select" selected >Select your present education</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="B.Tech">B.Tech</option>
+        <option value="M.Tech">M.Tech</option>
+        <option value="MBA">MBA</option>
+    </select>
+    <br> 
+    <br> 
+
+    <label><b>GPA:</b></label>           
+    <input type="text" name="LN" placeholder="GPA" />  
+    <br>  
+    <br> 
+
+    <label><b>Attendence percentage:</b></label>           
+    <input type="text" name="LN" placeholder="Attendence" />  
+    <br>
+    <br> 
+    
+    <label><b>MAJOR:</b></label>
+    <select  name ="major" class="plan" >
+        <option value="select" selected >Select your Major</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="B.Tech">B.Tech</option>
+        <option value="M.Tech">M.Tech</option>
+        <option value="MBA">MBA</option>
+    </select>
+    <br> 
+    <br> 
+
+    <p><b>APPLY YEAR:</b> <select id="ddlYears"></select></p>
+    <br>
+     
+    <div class="button">
+    <button type="submit" class="registerbtn">SUBMIT</button>
+    </div>
+    </div>
+    </form>
+
+</body>
+
+</html>
